@@ -1,0 +1,69 @@
+.root{
+	-fx-background-color:black;
+	-fx-font-family:monospace;
+	-fx-hgap:5px;
+	-fx-vgap:5px;
+	-fx-padding:5px;	
+}
+.text-field{
+	-fx-text-fill:lightgrey;
+	-fx-text-aligment:right;
+	-fx-font-size:25pt;
+	-fx-font-weight:bold;
+	-fx-padding:10px;
+	-fx-background-color:transparent;
+	-fx-background-insets:0px;
+}
+.button{
+	-fx-font-size:16pt;
+	-fx-background-radius:5em;
+	-fx-background-insets:0px;
+	-fx-border-radius:5em;
+}
+.button:focused{
+	-fx-border-color:white;
+}
+.button:armed{
+	-fx-border-color:yellow;
+}
+
+.numeros{
+	-fx-text-fill:white;
+	-fx-background-color:darkgray;	
+}
+.numeros:hover{
+	-fx-text-fill:darkgray;
+	-fx-background-color:white;	
+}
+.numeros:pressed{
+	-fx-text-fill:lightgray;
+	-fx-background-color:black;	
+}
+.borradores{
+	-fx-text-fill:black;
+	-fx-background-color:lightgray;
+}	
+.borradores:hover{
+	-fx-background-color:white;
+}.borradores:pressed{
+	-fx-text-fill:lightgray;
+	-fx-background-color:black;
+}
+.operaciones{
+	-fx-text-fill:white;
+	-fx-background-color:orange;
+}
+.operaciones:hover{
+	-fx-background-color:darkorange;
+}
+.operaciones:hover:default{
+	-fx-background-color:red;
+}
+.operaciones:pressed{
+	-fx-text-fill:orange;
+	-fx-background-color:white;
+}
+
+#gridpa #equalsBut{
+	-fx-background-color:orangered;
+}

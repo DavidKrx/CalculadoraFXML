@@ -1,22 +1,25 @@
 package dad.calculadorafxml;
 
 	import java.io.IOException;
+
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
-	import javafx.fxml.FXML;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-	import javafx.scene.control.TextField;
-	import javafx.scene.layout.GridPane;
+import javafx.scene.control.ContextMenu;
+import javafx.scene.control.MenuItem;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.GridPane;
 
 	public class Controller implements Initializable{
 		//Model
     	Calculadora calculadora=new Calculadora();
     	SimpleStringProperty visualizar = new SimpleStringProperty();
+    	
 		//View
 		public Controller() throws IOException {
 			FXMLLoader loader=new FXMLLoader(getClass().getResource("/fxml/View.fxml"));
@@ -28,6 +31,19 @@ import javafx.scene.control.Button;
 		@Override
 		public void initialize(URL location, ResourceBundle resources) {
 			visualizarText.textProperty().bind(visualizar);
+			MenuItem clasicItem=new MenuItem("Clásico");
+			clasicItem.setOnAction(e->{
+				gridpa.getStylesheets().setAll("/css/Clasica.css");
+			});
+			MenuItem modernItem=new MenuItem("Moderno");
+			modernItem.setOnAction(e->{
+				gridpa.getStylesheets().setAll("/css/Moderna.css");
+			});
+			ContextMenu menu=new ContextMenu(clasicItem,modernItem);
+			
+			gridpa.setOnContextMenuRequested(e->{
+				menu.show(gridpa,e.getScreenX(),e.getScreenY());
+			});
 		}
 		
 	    @FXML
@@ -89,7 +105,8 @@ import javafx.scene.control.Button;
 
 	    @FXML
 	    private TextField visualizarText;
-
+	    
+	    
 	    @FXML
 	    void CeButOnAction(ActionEvent event) {
 	    	calculadora.borrarTodo();
