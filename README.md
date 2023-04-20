@@ -5,3 +5,4 @@
  # Ventana principal
  La ventana principal tendrá TextField y los botones tanto numericos como los de las operaciones.
  
+<p align="center"><img src="src/main/resources/img/Calculadora visual.PNG" width=""/></p>
